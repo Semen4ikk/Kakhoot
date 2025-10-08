@@ -9,8 +9,8 @@ async function bootstrap() {
 
 
     const config = new DocumentBuilder()
-        .setTitle('API Documentation')
-        .setDescription('API для вашего приложения')
+        .setTitle('API Documentation Joiny')
+        .setDescription('Приложение для квизов "Joiny"')
         .setVersion('1.0')
         .addBearerAuth()
         .build();
