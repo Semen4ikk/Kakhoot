@@ -1,0 +1,72 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               Int               @id @default(autoincrement())
+  email            String            @unique
+  password         String
+  name             String
+  role             Role              @default(USER)
+  created_at       DateTime          @default(now())
+  updated_at       DateTime          @default(now()) @updatedAt
+  userAchievements UserAchievement[]
+}
+
+model Question {
+  id                Int      @id @default(autoincrement())
+  ques              String
+  correct_answer    String
+  incorrect_answers String[]
+
+  quizId Int
+  quiz   Quiz @relation(fields: [quizId], references: [id])
+
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+}
+
+model Quiz {
+  id        Int        @id @default(autoincrement())
+  name      String
+  category  String
+  questions Question[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+}
+
+enum Role {
+  ADMIN
+  USER
+  MODERATOR
+  GUEST
+}
+
+model Achievement {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String
+  triggerKey  String   @unique
+  createdAt   DateTime @default(now())
+
+  userAchievements UserAchievement[]
+}
+
+model UserAchievement {
+  user   User @relation(fields: [userId], references: [id])
+  userId Int
+
+  achievement   Achievement @relation(fields: [achievementId], references: [id])
+  achievementId Int
+
+  earnedAt DateTime @default(now())
+
+  @@id([userId, achievementId])
+}

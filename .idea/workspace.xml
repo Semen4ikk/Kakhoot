@@ -1,46 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fc2c9be-f40c-4a29-a83f-242802414f46" name="Changes" comment="" />
+    <list default="true" id="9fc2c9be-f40c-4a29-a83f-242802414f46" name="Changes" comment="Обновил описание документации">
+      <change afterPath="$PROJECT_DIR$/backend/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/eslint.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/nest-cli.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/prisma/schema.prisma" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/conception/middleware.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/conception/pipe.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/prisma.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/questions/question.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/questions/question.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/questions/question.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/questions/question.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/quizs/quiz.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/quizs/quiz.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/quizs/quiz.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/quizs/quiz.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/users/login.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/users/user.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/users/user.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/users/user.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/src/users/user.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/test/jest-e2e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/test/user.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/tsconfig.build.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kahootik/yarn.lock" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Semen4ikk"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Semen4ikk&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Semen4ikk/Kakhoot.git",
-    "accountId": "49a6a795-ca21-4fa7-b0b7-0ca60b76cfb6"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Semen4ikk/Kakhoot.git&quot;,
+    &quot;accountId&quot;: &quot;49a6a795-ca21-4fa7-b0b7-0ca60b76cfb6&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 2
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="33bzATm1ilRTQukuz64Jyr9O6Th" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Kakhoot&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Kakhoot\\backend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Kakhoot" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -55,11 +109,61 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759600416423</updated>
-      <workItem from="1759600419305" duration="306000" />
+      <workItem from="1759600419305" duration="718000" />
+      <workItem from="1759955120700" duration="883000" />
+      <workItem from="1759956026891" duration="3462000" />
+      <workItem from="1760362316481" duration="2742000" />
+      <workItem from="1760369285697" duration="1442000" />
+      <workItem from="1761945461478" duration="2660000" />
+      <workItem from="1762265507885" duration="696000" />
+      <workItem from="1762691430051" duration="37000" />
+      <workItem from="1762701572241" duration="380000" />
+      <workItem from="1762702202348" duration="1115000" />
+      <workItem from="1762703506534" duration="1611000" />
     </task>
+    <task id="LOCAL-00001" summary="Обновил описание документации">
+      <option name="closed" value="true" />
+      <created>1759955445752</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1759955445752</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Обновил описание документации">
+      <option name="closed" value="true" />
+      <created>1759955585283</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1759955585283</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Обновил описание документации">
+      <option name="closed" value="true" />
+      <created>1759955892661</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1759955892661</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Обновил описание документации" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновил описание документации" />
   </component>
 </project>
