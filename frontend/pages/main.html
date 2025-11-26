@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Главная</title>
+</head>
+<body>
+<header class="p-3 bg-light border-bottom">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Квизы</a>
+        </li>
+        <li class="nav-item ms-auto d-flex align-items-center">
+            <span>Добро пожаловать, <span id="user-login"></span>!</span>
+            <button id="logout-btn" class="btn btn-outline-danger btn-sm ms-2">Log out</button>
+        </li>
+    </ul>
+</header>
+
+<div class="container mt-4">
+    <h2 class="mb-4">Доступные квизы</h2>
+    <div class="mb-4">
+        <label for="category-search" class="form-label">Поиск по категории:</label>
+        <input
+                type="text"
+                class="form-control"
+                id="category-search"
+                placeholder="Введите категорию (например: Матеша, Программирование)"
+        />
+    </div>
+    <div id="quizzes-container" class="row g-4">
+        <div class="col-12 text-center" id="loading">Загрузка квизов...</div>
+    </div>
+    <nav aria-label="Навигация по страницам квизов" class="mt-4">
+        <ul id="pagination" class="pagination justify-content-center" style="display: none;"></ul>
+    </nav>
+</div>
+
+<script src="../components/main.js"></script>
+</body>
+</html>

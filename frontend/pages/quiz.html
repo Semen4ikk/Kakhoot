@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Квиз</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+    />
+</head>
+<body class="bg-light">
+<nav class="navbar navbar-light bg-white shadow-sm mb-4">
+    <div class="container">
+        <span class="navbar-brand">Квиз</span>
+        <button id="back-btn" class="btn btn-outline-secondary btn-sm">← Назад к квизам</button>
+    </div>
+</nav>
+<div class="container">
+    <div id="question-container" class="card shadow-sm p-4">
+        <div id="loading" class="text-center">Загрузка вопросов...</div>
+    </div>
+    <div id="navigation" class="d-flex justify-content-between mt-4" style="display: none;">
+        <button id="prev-btn" class="btn btn-outline-secondary" disabled>Назад</button>
+        <button id="next-btn" class="btn btn-primary">Далее</button>
+    </div>
+</div>
+
+<script src="../components/quiz.js"></script>
+</body>
+</html>

@@ -4,21 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fc2c9be-f40c-4a29-a83f-242802414f46" name="Changes" comment="добавил две таблицы">
+    <list default="true" id="9fc2c9be-f40c-4a29-a83f-242802414f46" name="Changes" comment="открыл корсы и исправил дто">
       <change afterPath="$PROJECT_DIR$/frontend/components/auth.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontend/components/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/quiz.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontend/pages/auth.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontend/pages/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pages/quiz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/questions/question.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/questions/question.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/questions/question.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/questions/question.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/questions/question.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/questions/question.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -51,6 +60,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -100,7 +110,7 @@
       <workItem from="1762701572241" duration="380000" />
       <workItem from="1762702202348" duration="1115000" />
       <workItem from="1762703506534" duration="7104000" />
-      <workItem from="1764160758034" duration="1789000" />
+      <workItem from="1764160758034" duration="6982000" />
     </task>
     <task id="LOCAL-00001" summary="Обновил описание документации">
       <option name="closed" value="true" />
@@ -142,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762706766084</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="открыл корсы и исправил дто">
+      <option name="closed" value="true" />
+      <created>1764162840328</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1764162840328</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +180,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Обновил описание документации" />
     <MESSAGE value="добавил две таблицы" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавил две таблицы" />
+    <MESSAGE value="открыл корсы и исправил дто" />
+    <option name="LAST_COMMIT_MESSAGE" value="открыл корсы и исправил дто" />
   </component>
 </project>
