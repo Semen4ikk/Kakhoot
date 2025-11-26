@@ -27,6 +27,15 @@ export class QuestionController {
     findAll() {
         return this.questionsService.questionFindAll();
     }
+    @Get('quiz/:quizId')
+    @ApiOperation({ summary: 'Получить все вопросы по ID квиза' })
+    @ApiResponse({ status: 200, description: 'Вопросы успешно получены' })
+    @ApiResponse({ status: 404, description: 'Квиз с указанным ID не найден' })
+    @ApiParam({ name: 'quizId', type: 'number', description: 'ID квиза' })
+    @ApiBearerAuth()
+    findByQuizId(@Param('quizId', ParseIntPipe) quizId: number) {
+        return this.questionsService.findQuestionsByQuizId(quizId);
+    }
 
     @Get(':id')
     @ApiOperation({summary: 'Получить Вопрос по ID'})

@@ -3,7 +3,7 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateQuestionDto {
     @ApiProperty({
-        example: 'Скільки 2 + 2?',
+        example: 'Скильки 2 + 2?',
         description: 'Текст вопроса',
     })
     @IsString()

@@ -13,6 +13,22 @@ export class QuestionService {
             },
         });
     }
+    async findQuestionsByQuizId(quizId: number) {
+        const quiz = await this.prisma.quiz.findUnique({
+            where: { id: quizId },
+        });
+
+        if (!quiz) {
+            throw new NotFoundException(`Quiz with ID ${quizId} not found`);
+        }
+
+        return this.prisma.question.findMany({
+            where: { quizId },
+            include: {
+                quiz: true,
+            },
+        });
+    }
 
     async questionGetById(id: number) {
         const question = await this.prisma.question.findUnique({
