@@ -4,41 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fc2c9be-f40c-4a29-a83f-242802414f46" name="Changes" comment="Обновил описание документации">
-      <change afterPath="$PROJECT_DIR$/backend/prisma/schema.prisma" afterDir="false" />
+    <list default="true" id="9fc2c9be-f40c-4a29-a83f-242802414f46" name="Changes" comment="добавил две таблицы">
+      <change afterPath="$PROJECT_DIR$/frontend/components/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pages/auth.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pages/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/.prettierrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/eslint.config.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/nest-cli.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/prisma/schema.prisma" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/conception/middleware.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/conception/pipe.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/prisma.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/questions/question.controller.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/questions/question.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/questions/question.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/questions/question.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/quizs/quiz.controller.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/quizs/quiz.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/quizs/quiz.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/quizs/quiz.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/users/login.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/users/user.controller.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/users/user.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/users/user.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/src/users/user.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/test/jest-e2e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/test/user.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/tsconfig.build.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kahootik/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/questions/question.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/questions/question.dto.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,22 +49,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Kakhoot&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Kakhoot\\backend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Kakhoot",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\Kakhoot\\backend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Kakhoot" />
@@ -119,7 +99,8 @@
       <workItem from="1762691430051" duration="37000" />
       <workItem from="1762701572241" duration="380000" />
       <workItem from="1762702202348" duration="1115000" />
-      <workItem from="1762703506534" duration="1611000" />
+      <workItem from="1762703506534" duration="7104000" />
+      <workItem from="1764160758034" duration="1789000" />
     </task>
     <task id="LOCAL-00001" summary="Обновил описание документации">
       <option name="closed" value="true" />
@@ -145,7 +126,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759955892661</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="добавил две таблицы">
+      <option name="closed" value="true" />
+      <created>1762706734098</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1762706734098</updated>
+    </task>
+    <task id="LOCAL-00005" summary="добавил две таблицы">
+      <option name="closed" value="true" />
+      <created>1762706766084</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762706766084</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +161,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Обновил описание документации" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновил описание документации" />
+    <MESSAGE value="добавил две таблицы" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавил две таблицы" />
   </component>
 </project>

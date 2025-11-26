@@ -3,8 +3,8 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateQuestionDto {
     @ApiProperty({
-        example: 'Cкильки 2 + 2 ?',
-        description: 'Описание вопроса',
+        example: 'Скільки 2 + 2?',
+        description: 'Текст вопроса',
     })
     @IsString()
     @IsNotEmpty()
@@ -12,29 +12,28 @@ export class CreateQuestionDto {
 
     @ApiProperty({
         example: '4',
-        description: 'Правильный отает',
+        description: 'Правильный ответ',
     })
     @IsString()
     @IsNotEmpty()
     correct_answer: string;
 
     @ApiProperty({
-        example: ['5', '33', '3'],
-        description: 'Массив неправильных ответов',
+        example: ['1', '3', '5'],
+        description: 'Массив неправильных ответов (минимум 1, все непустые строки)',
     })
     @IsArray()
-    @ArrayNotEmpty()
-    @IsString({ each: true })
-    @IsNotEmpty({ each: true })
-    incorrect_answer: string[];
+    @ArrayNotEmpty({ message: 'Массив неправильных ответов не может быть пустым' })
+    @IsString({ each: true, message: 'Каждый неправильный ответ должен быть строкой' })
+    @IsNotEmpty({ each: true, message: 'Неправильный ответ не может быть пустой строкой' })
+    incorrect_answers: string[];
 
     @ApiProperty({
         example: 1,
-        description: 'ID of the quiz this question belongs to',
+        description: 'ID викторины, к которой относится вопрос',
     })
-    @IsInt()
-    @IsPositive()
-    @IsNotEmpty()
+    @IsInt({ message: 'quizId должен быть целым числом' })
+    @IsPositive({ message: 'quizId должен быть положительным' })
     quizId: number;
 }
 
