@@ -1,8 +1,9 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import {BadRequestException, Injectable, UnauthorizedException} from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import { PrismaService } from '../prisma.service';
 import { CreateUsersDto, TUpdateUsersDto } from './user.dto';
+import {PrismaClientKnownRequestError} from "@prisma/client/runtime/client";
 
 @Injectable()
 export class UsersService {
@@ -30,14 +31,36 @@ export class UsersService {
     }
 
 
+
     async userCreate(dto: CreateUsersDto) {
         const hashedPassword = await bcrypt.hash(dto.password, 10);
-        return this.prisma.user.create({
-            data: {
-                ...dto,
-                password: hashedPassword,
-            },
-        });
+
+        try {
+            return await this.prisma.user.create({
+                data: {
+                    ...dto,
+                    password: hashedPassword,
+                },
+                select: {
+                    id: true,
+                    email: true,
+                    name: true,
+                    role: true,
+                },
+            });
+        } catch (error) {
+            if (
+                error instanceof PrismaClientKnownRequestError &&
+                error.code === 'P2002'
+            ) {
+                const target = error.meta?.target;
+                if (Array.isArray(target) && target.includes('email')) {
+                    throw new BadRequestException('Пользователь с таким email уже существует');
+                }
+                throw new BadRequestException('Данные, которые вы пытаетесь использовать, уже заняты');
+            }
+            throw error;
+        }
     }
 
 
