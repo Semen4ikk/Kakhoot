@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fc2c9be-f40c-4a29-a83f-242802414f46" name="Changes" comment="открыл корсы и исправил дто">
-      <change afterPath="$PROJECT_DIR$/frontend/components/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/quiz.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/auth.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/quiz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/questions/question.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/questions/question.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/questions/question.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/questions/question.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/questions/question.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/questions/question.service.ts" afterDir="false" />
+    <list default="true" id="9fc2c9be-f40c-4a29-a83f-242802414f46" name="Changes" comment="добавил фронтенд на ванильном JS">
+      <change afterPath="$PROJECT_DIR$/backend/test/users.e2e.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/test/user.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/test/user.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/test/users.integration.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/test/users.integration.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +23,7 @@
       <list>
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -58,32 +56,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Kakhoot",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "D:\\Kakhoot\\backend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Jest.POST /users (Integration).executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Kakhoot&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;D:/Kakhoot/backend/node_modules/jest&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Kakhoot\\backend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Kakhoot" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="POST /users (Integration)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/backend/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/backend" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/backend/test/users.integration.spec.ts" />
+      <test-names>
+        <test-name value="POST /users (Integration)" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.POST /users (Integration)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -110,7 +129,9 @@
       <workItem from="1762701572241" duration="380000" />
       <workItem from="1762702202348" duration="1115000" />
       <workItem from="1762703506534" duration="7104000" />
-      <workItem from="1764160758034" duration="6982000" />
+      <workItem from="1764160758034" duration="19131000" />
+      <workItem from="1765104886130" duration="2731000" />
+      <workItem from="1765302688276" duration="2308000" />
     </task>
     <task id="LOCAL-00001" summary="Обновил описание документации">
       <option name="closed" value="true" />
@@ -160,7 +181,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764162840328</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="добавил ручку для вопросов">
+      <option name="closed" value="true" />
+      <created>1764169227919</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1764169227921</updated>
+    </task>
+    <task id="LOCAL-00008" summary="добавил фронтенд на ванильном JS">
+      <option name="closed" value="true" />
+      <created>1764169266843</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1764169266843</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +218,8 @@
     <MESSAGE value="Обновил описание документации" />
     <MESSAGE value="добавил две таблицы" />
     <MESSAGE value="открыл корсы и исправил дто" />
-    <option name="LAST_COMMIT_MESSAGE" value="открыл корсы и исправил дто" />
+    <MESSAGE value="добавил ручку для вопросов" />
+    <MESSAGE value="добавил фронтенд на ванильном JS" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавил фронтенд на ванильном JS" />
   </component>
 </project>

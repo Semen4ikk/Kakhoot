@@ -2,14 +2,15 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { UsersService } from '../src/users/user.service';
 import { PrismaService } from '../src/prisma.service';
 import { JwtService } from '@nestjs/jwt';
-import {$Enums} from "prisma-client-fe0c45c82ab8853efd6198ba6db8bb1d73bad69c2332866a7140873b06d1b55e";
-import Role = $Enums.Role;
-// import { Role } from '..generated/prisma/client'
+import {Role} from "@prisma/client";
+
+
 
 const mockUser = {
     id: 1,
     email: 'test@example.com',
     password: 'hashedPassword123',
+    name: "string",
     role: Role.USER,
     created_at: new Date(),
     updated_at: new Date(),
