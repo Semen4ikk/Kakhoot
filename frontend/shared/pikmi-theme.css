@@ -1,0 +1,82 @@
+html.pikmi-theme {
+    --bs-body-bg: #f8c6d0;
+    --bs-body-color: #5a2a4e;
+    --bs-primary: #ff69b4;
+    --bs-secondary: #ffb6c1;
+    --bs-light: #fff9fb;
+    --bs-border-color: #f2a9c2;
+}
+
+html.pikmi-theme body {
+    background-color: #f8c6d0 !important;
+    color: #5a2a4e !important;
+    font-family: "Comic Sans MS", "Marker Felt", cursive, sans-serif !important;
+}
+
+html.pikmi-theme h1,
+html.pikmi-theme h2,
+html.pikmi-theme h3,
+html.pikmi-theme h4,
+html.pikmi-theme h5,
+html.pikmi-theme h6 {
+    color: #ff69b4 !important;
+}
+
+html.pikmi-theme .btn-outline-danger {
+    color: #5a2a4e !important;
+    border-color: #ff69b4 !important;
+}
+html.pikmi-theme .btn-outline-danger:hover {
+    background-color: #ff69b4 !important;
+    color: white !important;
+}
+
+html.pikmi-theme .form-control {
+    border: 2px solid #ffb6c1 !important;
+    border-radius: 12px !important;
+    background-color: #fff9fb !important;
+    color: #5a2a4e !important;
+}
+
+html.pikmi-theme .container {
+    background-color: #fff9fb !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    box-shadow: 0 4px 12px rgba(216, 112, 214, 0.3) !important;
+    border: 2px dashed #ffb6c1 !important;
+}
+
+html.pikmi-theme .btn.btn-primary {
+    background-color: #ff69b4 !important;
+    border-color: #ff69b4 !important;
+    color: white !important;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 10px 20px;
+    box-shadow: 0 3px 8px rgba(255, 105, 180, 0.4);
+    transition: all 0.2s ease;
+}
+
+html.pikmi-theme .btn.btn-primary:hover {
+    background-color: #d870d6 !important;
+    border-color: #d870d6 !important;
+    transform: scale(1.03);
+}
+
+html.pikmi-theme .btn.btn-primary:focus,
+html.pikmi-theme .btn.btn-primary:active {
+    box-shadow: 0 0 0 0.25rem rgba(255, 105, 180, 0.5) !important;
+}
+html.pikmi-theme .pagination .page-link {
+    color: #5a2a4e !important;
+    background-color: #fff9fb !important;
+    border: 1px solid #ffb6c1 !important;
+}
+html.pikmi-theme .pagination .page-link:hover {
+    background-color: #ffb6c1 !important;
+    color: white !important;
+}
+html.pikmi-theme .pagination .active .page-link {
+    background-color: #ff69b4 !important;
+    border-color: #ff69b4 !important;
+}
