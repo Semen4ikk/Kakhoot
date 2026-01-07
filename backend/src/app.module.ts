@@ -5,7 +5,6 @@ import { ConfigModule } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
 import {QuizModule} from "./quizs/quiz.module";
 import {QuestionModule} from "./questions/question.module";
-import {AchievementService} from "./achievement/achievement.service";
 import {AchievementModule} from "./achievement/achievement.module";
 
 
