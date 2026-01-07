@@ -1,7 +1,7 @@
     import { test, expect } from '@playwright/test';
     import * as path from 'path';
 
-    const PROJECT_ROOT = 'D:/Kakhoot/frontend';
+    const PROJECT_ROOT = 'D:/Kakhoot/frontendVanila';
 
     const toFileUrl = (filename: string) => {
         const fullPath = path.join(PROJECT_ROOT, 'pages', filename);
