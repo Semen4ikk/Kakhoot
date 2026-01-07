@@ -5,6 +5,8 @@ import { ConfigModule } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
 import {QuizModule} from "./quizs/quiz.module";
 import {QuestionModule} from "./questions/question.module";
+import {AchievementService} from "./achievement/achievement.service";
+import {AchievementModule} from "./achievement/achievement.module";
 
 
 
@@ -16,6 +18,7 @@ import {QuestionModule} from "./questions/question.module";
         UsersModule,
         QuizModule,
         QuestionModule,
+        AchievementModule,
         JwtModule.register({
             secret: 'secret',
             signOptions: { expiresIn: '1h' },
