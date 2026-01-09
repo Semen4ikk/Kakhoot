@@ -1,0 +1,30 @@
+.form{
+    background-color: #2d2d2d;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+}
+.title{
+    color: white;
+    font-size: 24px;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+.form input{
+    width: 100%;
+    display: block;
+    padding: 6px 8px;
+    margin: 8px 0;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+    background-color: #444;
+    border-radius: 4px;
+}
+.form input:focus{
+    border-color: aqua;
+}

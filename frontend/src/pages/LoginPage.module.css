@@ -1,0 +1,10 @@
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    background-color: #1e1e1e; /* тёмный фон, как у вас */
+    padding: 16px; /* отступы на мобильных */
+}
