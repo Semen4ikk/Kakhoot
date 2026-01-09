@@ -1,4 +1,4 @@
-import {AuthForm} from "../widgets/AuthForm.tsx";
+import {AuthForm} from "../widgets/ui/AuthForm.tsx";
 import styles from './LoginPage.module.css'
 export function LoginPage() {
 

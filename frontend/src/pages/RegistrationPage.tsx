@@ -1,4 +1,4 @@
-import {RegisterForm} from "../widgets/RegisterForm.tsx";
+import {RegisterForm} from "../widgets/ui/RegisterForm.tsx";
 
 export function RegistrationPage() {
 
