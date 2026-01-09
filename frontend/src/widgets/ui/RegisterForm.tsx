@@ -1,8 +1,8 @@
 import {type SubmitHandler, useForm} from "react-hook-form";
-import type {IForm} from "./types/form.types.ts";
-import styles from "../pages/LoginPage.module.css";
-import {ErrorMessage} from "../shared/ui/ErrorMessage.tsx";
-import {postNewUser} from "../app/api.ts";
+import type {IForm} from "../types/form.types.ts";
+import styles from "../../pages/LoginPage.module.css";
+import {ErrorMessage} from "../../shared/ui/ErrorMessage.tsx";
+import {postNewUser} from "../../app/api.ts";
 
 
 export function RegisterForm() {

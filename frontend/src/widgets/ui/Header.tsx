@@ -1,5 +1,5 @@
-import styles from './Header.module.css'
-import {UserName} from "../shared/ui/UserName.tsx";
+import styles from '../Header.module.css'
+import {UserName} from "../../shared/ui/UserName.tsx";
 
 
 export function Header() {

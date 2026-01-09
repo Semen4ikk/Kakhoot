@@ -1,8 +1,8 @@
 import {type SubmitHandler, useForm} from "react-hook-form";
-import type {IForm} from "./types/form.types.ts";
-import styles from "./Form.module.css"
-import {ErrorMessage} from "../shared/ui/ErrorMessage.tsx";
-import {getTokenUser} from "../app/api.ts";
+import type {IForm} from "../types/form.types.ts";
+import styles from "../Form.module.css"
+import {ErrorMessage} from "../../shared/ui/ErrorMessage.tsx";
+import {getTokenUser} from "../../app/api.ts";
 
 
 export function AuthForm() {
