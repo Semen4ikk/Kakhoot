@@ -13,3 +13,7 @@ export function getUserData() {
     return fetch("http://localhost:4200/users/28").then(res => res.json())
 
 }
+
+export function getQuizs() {
+    return fetch("http://localhost:4200/quiz").then(res => res.json())
+}
