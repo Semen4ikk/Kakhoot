@@ -17,3 +17,7 @@ export function getUserData() {
 export function getQuizs() {
     return fetch("http://localhost:4200/quiz").then(res => res.json())
 }
+
+export function getQuizQuestion(id:string) {
+    return fetch("http://localhost:4200/quiz/" + id).then(res => res.json())
+}

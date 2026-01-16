@@ -1,6 +1,6 @@
 import {Header} from "../widgets/ui/Header.tsx";
 import styles from "./MainPage.module.css"
-import {QuizList} from "../widgets/ui/QuizList.tsx";
+import {QuizList} from "../entities/quiz/model/QuizList.tsx";
 export function MainPage(){
 
     return (

@@ -1,5 +1,5 @@
-import {Card} from "./Card.tsx";
-import {useQuizs} from "../../shared/hooks/useQuizs.tsx";
+import {QuizCard} from "../../../widgets/ui/QuizCard.tsx";
+import {useQuizs} from "./useQuizs.tsx";
 
 export type QuestionOutput = {
     id: string;
@@ -41,7 +41,7 @@ export function QuizList() {
                 {quizs.map((quiz)=>{
 
                     return (
-                        <Card
+                        <QuizCard
                             key={quiz.id}
                             quiz={quiz}
                         />

@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {getUserData} from "../../app/api.ts";
+import {getUserData} from "../../../app/api.ts";
 
 export function useUserName() {
     const [userName, setUserName] = useState<string>("Загрузка");

@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
-import {getQuizs} from "../../app/api.ts";
-import type {QuizListCardOutput} from "../../widgets/ui/QuizList.tsx";
+import {getQuizs} from "../../../app/api.ts";
+import type {QuizListCardOutput} from "./QuizList.tsx";
 
 
 
