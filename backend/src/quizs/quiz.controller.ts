@@ -1,11 +1,12 @@
 import {
+    BadRequestException,
     Body,
     Controller,
     Delete,
     Get,
     Param,
     Post,
-    Put,
+    Put, Query,
     UsePipes,
     ValidationPipe,
 } from '@nestjs/common';
@@ -14,6 +15,7 @@ import { QuizService } from './quiz.service';
 import { ParseIntPipe } from '../conception/pipe';
 import * as quizDto from './quiz.dto';
 
+
 @ApiTags('quiz')
 @Controller('quiz')
 export class QuizController {
@@ -21,11 +23,17 @@ export class QuizController {
     }
 
     @Get()
-    @ApiOperation({summary: 'Получить все квизы'})
-    @ApiResponse({status: 200, description: 'Список квизов успешно получен'})
+    @ApiOperation({ summary: 'Получить все квизы' })
+    @ApiResponse({ status: 200, description: 'Список квизов успешно получен' })
     @ApiBearerAuth()
-    findAll() {
-        return this.quizsService.quizFindAll();
+    findAll(
+        @Query('page', ParseIntPipe) page: number = 1,
+        @Query('limit', ParseIntPipe) limit: number = 9,
+    ) {
+        if (page < 1 || limit < 1) {
+            throw new BadRequestException('Page and limit must be >= 1');
+        }
+        return this.quizsService.quizFindAll(page, limit);
     }
 
     @Get(':id')

@@ -6,8 +6,11 @@ import { CreateQuizDto, TUpdateQuizDto } from './quiz.dto';
 export class QuizService {
     constructor(private readonly prisma: PrismaService) {}
 
-    quizFindAll() {
+    quizFindAll(page: number, limit: number) {
+        const skip = (page - 1) * limit;
         return this.prisma.quiz.findMany({
+            skip,
+            take: limit,
             include: {
                 questions: true,
             },
