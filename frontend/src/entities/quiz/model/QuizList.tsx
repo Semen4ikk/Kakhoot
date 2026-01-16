@@ -17,7 +17,10 @@ export type QuizListCardOutput = {
 
 }
 export function QuizList() {
-    const {quizs} = useQuizs();
+
+    const {quizs, loadMore} = useQuizs();
+
+
 
     if (quizs === null) {
         return (
@@ -49,6 +52,7 @@ export function QuizList() {
                 })
                 }
             </ul>
+            <button type={"button"} onClick={loadMore}>Eще</button>
         </div>
 
     )

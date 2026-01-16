@@ -10,13 +10,25 @@ export function getTokenUser(userData:UserData):void {
 }
 
 export function getUserData() {
-    return fetch("http://localhost:4200/users/28").then(res => res.json())
+    return fetch("http://localhost:4200/users/32").then(res => res.json())
 
 }
+export function getQuizs(pageNumber: number, limit: number) {
+    const url = new URL('http://localhost:4200/quiz');
+    url.searchParams.set('page', String(pageNumber));
+    url.searchParams.set('limit', String(limit));
 
-export function getQuizs() {
-    return fetch("http://localhost:4200/quiz").then(res => res.json())
+    return fetch(url.toString())
+        .then(res => {
+            if (!res.ok) {
+                throw new Error('Ошибка при загрузке квизов');
+            }
+            return res.json();
+        });
 }
+// export function getQuizs(pageNumber: number, limit: number) {
+//     return fetch("http://localhost:4200/quiz").then(res => res.json())
+// }
 
 export function getQuizQuestion(id:string) {
     return fetch("http://localhost:4200/quiz/" + id).then(res => res.json())
