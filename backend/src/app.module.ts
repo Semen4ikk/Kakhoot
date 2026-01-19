@@ -1,8 +1,8 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { Module} from '@nestjs/common';
 import { UsersModule } from './users/user.module';
-import { JwtMiddleware} from './conception/middleware';
+
 import { ConfigModule } from '@nestjs/config';
-import { JwtModule } from '@nestjs/jwt';
+
 import {QuizModule} from "./quizs/quiz.module";
 import {QuestionModule} from "./questions/question.module";
 import {AchievementModule} from "./achievement/achievement.module";
@@ -21,5 +21,5 @@ import {AchievementModule} from "./achievement/achievement.module";
 
     ],
 })
-export class AppModule{};
+export class AppModule{}
 
