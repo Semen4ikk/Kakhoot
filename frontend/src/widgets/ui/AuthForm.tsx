@@ -1,6 +1,6 @@
 import {type SubmitHandler, useForm} from "react-hook-form";
 import type {IForm} from "../types/form.types.ts";
-import styles from "../Form.module.css"
+import styles from "./AuthForm.module.css"
 import {ErrorMessage} from "../../shared/ui/ErrorMessage.tsx";
 import {getTokenUser} from "../../app/api.ts";
 
@@ -21,7 +21,7 @@ export function AuthForm() {
     return (
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <p className={styles.title}>Авторизация</p>
-            <input type="email"
+            <input className={styles.input} type="email"
                    placeholder="Почта"
                    {...register("email", {
                        required: 'Обязательное поле',
@@ -32,7 +32,7 @@ export function AuthForm() {
                    })} />
             {emailError && (
                 <ErrorMessage textError={emailError}/>)}
-            <input type="password"
+            <input className={styles.input} type="password"
                    placeholder="Пароль"
                    {...register("password", {
                        required: 'Обязательное поле',
@@ -45,7 +45,7 @@ export function AuthForm() {
             {passwordError && (
                 <ErrorMessage textError={passwordError}/>
             )}
-            <button type="submit">Login</button>
+            <button className={styles.button} type="submit">Login</button>
         </form>
     )
 }

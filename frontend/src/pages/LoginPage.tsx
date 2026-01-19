@@ -3,7 +3,7 @@ import styles from './LoginPage.module.css'
 export function LoginPage() {
 
     return (
-        <div className={styles.login}>
+        <div className={styles.form}>
             <AuthForm/>
         </div>
     )

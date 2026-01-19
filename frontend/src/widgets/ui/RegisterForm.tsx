@@ -1,9 +1,9 @@
 import {type SubmitHandler, useForm} from "react-hook-form";
 import type {IForm} from "../types/form.types.ts";
-import styles from "../../pages/LoginPage.module.css";
+
 import {ErrorMessage} from "../../shared/ui/ErrorMessage.tsx";
 import {postNewUser} from "../../app/api.ts";
-
+import styles from './RegistrationForm.module.css'
 
 export function RegisterForm() {
     const {register, handleSubmit, formState} = useForm<IForm>({
@@ -20,9 +20,9 @@ export function RegisterForm() {
     }
 
     return (
-        <form className={styles.login} onSubmit={handleSubmit(onSubmit)}>
-            <p className={styles.form_title}>Регистрация</p>
-            <input type="text"
+        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+            <p className={styles.title}>Регистрация</p>
+            <input className={styles.input} type="text"
                    placeholder="Введите ваше имя"
                    {...register("name", {
                        required: 'Обязательное поле',
@@ -33,7 +33,7 @@ export function RegisterForm() {
                    })} />
             {nameError && (
                 <ErrorMessage textError={nameError}/>)}
-            <input type="email"
+            <input className={styles.input} type="email"
                    placeholder="Почта"
                    {...register("email", {
                        required: 'Обязательное поле',
@@ -44,7 +44,7 @@ export function RegisterForm() {
                    })} />
             {emailError && (
                 <ErrorMessage textError={emailError}/>)}
-            <input type="password"
+            <input className={styles.input} type="password"
                    placeholder="Пароль"
                    {...register("password", {
                        required: 'Обязательное поле',
@@ -57,7 +57,7 @@ export function RegisterForm() {
             {passwordError && (
                 <ErrorMessage textError={passwordError}/>
             )}
-            <button type="submit">Login</button>
+            <button className={styles.button} type="submit">Login</button>
         </form>
     )
 }

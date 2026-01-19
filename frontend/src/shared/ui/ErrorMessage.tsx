@@ -1,12 +1,13 @@
+import styles from './ErrorMessage.module.css';
+
 type TextErrorType = {
     textError: string;
-}
+};
 
-export function ErrorMessage({textError}: TextErrorType) {
-
-    return(
-        <p style={{color: 'tomato'}}>
+export function ErrorMessage({ textError }: TextErrorType) {
+    return (
+        <span className={styles.errorMessage}>
             {textError}
-        </p>
-    )
+        </span>
+    );
 }
