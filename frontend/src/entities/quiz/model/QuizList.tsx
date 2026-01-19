@@ -1,5 +1,8 @@
 import {QuizCard} from "../../../widgets/ui/QuizCard.tsx";
 import {useQuizs} from "./useQuizs.tsx";
+import {useState} from "react";
+import {Search} from "../../../shared/ui/search.tsx";
+import {filterItems} from "../../../features/filterItems.tsx";
 
 export type QuestionOutput = {
     id: string;
@@ -18,7 +21,10 @@ export type QuizListCardOutput = {
 }
 export function QuizList() {
 
-    const {quizs, loadMore, loading, hasMore} = useQuizs();
+    let {quizs, loadMore, loading, hasMore} = useQuizs();
+    const [searchQuery, setSearchQuery] = useState('');
+
+
 
 
 
@@ -37,9 +43,15 @@ export function QuizList() {
 
         )
     }
+    if (quizs){
+        quizs = filterItems(quizs, searchQuery);
+    }
 
     return (
         <div>
+
+            <Search value={searchQuery} onChange={setSearchQuery} />
+
             <ul>
                 {quizs.map((quiz)=>{
 
