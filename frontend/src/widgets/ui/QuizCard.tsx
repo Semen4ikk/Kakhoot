@@ -1,5 +1,5 @@
 import {useNavigate} from "react-router-dom";
-
+import styles from './QuizCard.module.css'
 type Props = {
     quiz: {
         id: string;
@@ -16,10 +16,13 @@ export function QuizCard({quiz}: Props) {
     };
 
     return (
-        <li key={quiz.id}>
-            <span>{quiz.name}</span>
-            <span>{quiz.category}</span>
-            <button onClick={handleSelect}>Выбрать</button>
-        </li>
+        <div key={quiz.id} className={styles.quizCard} onClick={handleSelect}>
+            <div className={styles.quizCardContent}>
+                <img src='../../../public/звезды.jpg' alt={quiz.name} />
+                <h3>{quiz.name}</h3>
+                <p>{quiz.category}</p>
+                <button onClick={handleSelect}>Выбрать</button>
+            </div>
+        </div>
     )
 }

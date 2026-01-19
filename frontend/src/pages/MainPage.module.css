@@ -1,3 +1,5 @@
 .MainPage {
-    padding-top: 90px;
+    padding: 90px 32px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
 }

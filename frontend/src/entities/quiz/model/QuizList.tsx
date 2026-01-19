@@ -3,6 +3,7 @@ import {useQuizs} from "./useQuizs.tsx";
 import {useState} from "react";
 import {Search} from "../../../shared/ui/search.tsx";
 import {filterItems} from "../../../features/filterItems.tsx";
+import styles from './QuizList.module.css'
 
 export type QuestionOutput = {
     id: string;
@@ -48,11 +49,11 @@ export function QuizList() {
     }
 
     return (
-        <div>
+        <div >
 
             <Search value={searchQuery} onChange={setSearchQuery} />
 
-            <ul>
+            <ul className={styles.quizList}>
                 {quizs.map((quiz)=>{
 
                     return (
