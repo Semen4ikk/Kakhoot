@@ -6,7 +6,7 @@ import {
     Get,
     Param,
     Post,
-    Put,
+    Put, UnauthorizedException,
     UsePipes,
     ValidationPipe,
 } from '@nestjs/common';
@@ -80,13 +80,17 @@ export class UsersController {
     }
 
     @Post('login')
-    @ApiOperation({ summary: 'Вход пользователя и получение JWT-токена' })
-    @ApiResponse({ status: 200, description: 'JWT-токен успешно получен' })
+    @ApiOperation({ summary: 'Вход пользователя' })
+    @ApiResponse({ status: 200, description: 'Пользователь успешно вошёл' })
     @ApiResponse({ status: 401, description: 'Неверный email или пароль' })
     @ApiBody({ type: LoginDto })
-    async login(@Body() dto: LoginDto): Promise<{ token: string }> {
+    async login(@Body() dto: LoginDto): Promise<{ user: { id: number; name: string; email: string } }> {
         const user = await this.usersService.validateUser(dto.email, dto.password);
-        const token = this.usersService.generateToken(user);
-        return { token };
+
+        if (!user) {
+            throw new UnauthorizedException('Неверный email или пароль');
+        }
+
+        return { user };
     }
 }

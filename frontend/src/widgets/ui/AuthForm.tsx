@@ -2,10 +2,14 @@ import {type SubmitHandler, useForm} from "react-hook-form";
 import type {IForm} from "../types/form.types.ts";
 import styles from "./AuthForm.module.css"
 import {ErrorMessage} from "../../shared/ui/ErrorMessage.tsx";
-import {getTokenUser} from "../../app/api.ts";
+import {useNavigate} from "react-router-dom";
+import {useState} from "react";
+import {userLogin} from "../../app/api.ts";
 
 
 export function AuthForm() {
+    const navigate = useNavigate();
+    const [serverError, setServerError] = useState<string | null>(null);
     const {register, handleSubmit, formState} = useForm<IForm>({
             mode: 'onChange',
         }
@@ -13,8 +17,21 @@ export function AuthForm() {
     const emailError = formState.errors['email']?.message
     const passwordError = formState.errors['password']?.message
 
-    const onSubmit: SubmitHandler<IForm> = (data) => {
-        getTokenUser(data)
+    const onSubmit: SubmitHandler<IForm> = async (data) => {
+        try {
+            setServerError(null);
+            const user = await userLogin(data);
+
+            localStorage.setItem('user', JSON.stringify(user));
+
+            navigate('/main');
+        } catch (err) {
+            if (err instanceof Error) {
+                setServerError(err.message);
+            } else {
+                setServerError('Ошибка авторизации');
+            }
+        }
 
     }
 
@@ -44,6 +61,11 @@ export function AuthForm() {
             />
             {passwordError && (
                 <ErrorMessage textError={passwordError}/>
+            )}
+            {serverError && (
+                <div className={styles.serverError}>
+                    <ErrorMessage textError={serverError} />
+                </div>
             )}
             <button className={styles.button} type="submit">Login</button>
         </form>

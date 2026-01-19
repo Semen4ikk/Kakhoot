@@ -18,15 +18,8 @@ import {AchievementModule} from "./achievement/achievement.module";
         QuizModule,
         QuestionModule,
         AchievementModule,
-        JwtModule.register({
-            secret: 'secret',
-            signOptions: { expiresIn: '1h' },
-        }),
+
     ],
 })
-export class AppModule implements NestModule {
-    configure(consumer: MiddlewareConsumer) {
-        consumer
-            .apply(JwtMiddleware)
-    }
-}
+export class AppModule{};
+

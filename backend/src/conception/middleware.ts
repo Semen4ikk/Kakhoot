@@ -19,7 +19,7 @@ export class JwtMiddleware {
         const token = authHeader.split(' ')[1];
 
         try {
-            const payload = this.jwtService.verify(token, { secret: 'secret' });
+            const payload = this.jwtService.verify(token);
             console.log('Token verified:', payload);
             req.user = payload;
             next();
