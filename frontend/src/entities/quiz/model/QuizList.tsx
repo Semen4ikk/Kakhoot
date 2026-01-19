@@ -18,7 +18,7 @@ export type QuizListCardOutput = {
 }
 export function QuizList() {
 
-    const {quizs, loadMore} = useQuizs();
+    const {quizs, loadMore, loading, hasMore} = useQuizs();
 
 
 
@@ -52,7 +52,15 @@ export function QuizList() {
                 })
                 }
             </ul>
-            <button type={"button"} onClick={loadMore}>Eще</button>
+            {hasMore && (
+                <button
+                    type="button"
+                    onClick={loadMore}
+                    disabled={loading}
+                >
+                    {loading ? 'Загрузка...' : 'Еще'}
+                </button>
+            )}
         </div>
 
     )
