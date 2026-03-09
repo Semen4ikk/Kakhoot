@@ -1,4 +1,4 @@
-import {useUserName} from "../../entities/user/model/useUserName.tsx";
+import {useUserName} from "../../entities/user/hooks/useUserName.tsx";
 
 export function UserName() {
 

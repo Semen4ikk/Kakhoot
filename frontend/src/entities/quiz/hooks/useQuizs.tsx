@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import { getQuizs } from "../../../app/api.ts";
-import type { QuizListCardOutput } from "./QuizList.tsx";
+import type { QuizListCardOutput } from "../model/QuizList.tsx";
 
 export function useQuizs() {
     const [quizs, setQuizs] = useState<QuizListCardOutput[] | null>(null);

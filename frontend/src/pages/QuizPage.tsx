@@ -1,5 +1,5 @@
 import {Question} from "../entities/question/model/Question.tsx";
-import {useQuiz} from "../entities/quiz/model/useQuiz.tsx";
+import {useQuiz} from "../entities/quiz/hooks/useQuiz.tsx";
 import {useState} from "react";
 import {ResultWindow} from "../widgets/ui/ResultWindow.tsx";
 import {useParams} from "react-router-dom";

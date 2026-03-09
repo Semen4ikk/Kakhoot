@@ -1,5 +1,5 @@
 import {QuizCard} from "../../../widgets/ui/QuizCard.tsx";
-import {useQuizs} from "./useQuizs.tsx";
+import {useQuizs} from "../hooks/useQuizs.tsx";
 import {useState} from "react";
 import {Search} from "../../../shared/ui/search.tsx";
 import {filterItems} from "../../../features/filterItems.tsx";
