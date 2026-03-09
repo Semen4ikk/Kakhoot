@@ -1,4 +1,4 @@
-import {QuizCard} from "../../../widgets/ui/QuizCard.tsx";
+import {QuizCard} from "../../../widgets/ui/QuizCard/QuizCard.tsx";
 import {useQuizs} from "../hooks/useQuizs.tsx";
 import {useState} from "react";
 import {Search} from "../../../shared/ui/search.tsx";

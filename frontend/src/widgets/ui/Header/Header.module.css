@@ -28,3 +28,10 @@
     align-items: center;
     gap: 16px;
 }
+
+.header a{
+    text-decoration: none;
+}
+.header a:visited{
+    color: #fff;
+}

@@ -1,5 +1,6 @@
-import styles from '../Header.module.css'
-import {UserName} from "../../shared/ui/UserName.tsx";
+import styles from './Header.module.css'
+import {UserName} from "../../../shared/ui/UserName.tsx";
+import {Link} from "react-router-dom";
 
 
 export function Header() {
@@ -10,6 +11,7 @@ export function Header() {
                 <p>Joiny</p>
             </div>
             <div>
+                <Link to="/lobby" >Играть с друзьями</Link>
                 <UserName/>
                 <button>Выйти</button>
             </div>

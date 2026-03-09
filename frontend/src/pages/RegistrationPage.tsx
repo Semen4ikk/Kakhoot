@@ -1,4 +1,4 @@
-import {RegisterForm} from "../widgets/ui/RegisterForm.tsx";
+import {RegisterForm} from "../widgets/ui/Register/RegisterForm.tsx";
 import styles from './RegistrationPage.module.css'
 export function RegistrationPage() {
 
