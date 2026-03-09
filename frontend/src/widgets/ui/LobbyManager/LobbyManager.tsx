@@ -8,19 +8,16 @@ export const LobbyManager = () => {
     const [quizId, setQuizId] = useState('');
     const [joinCode, setJoinCode] = useState('');
 
-    // Форма создания
     const handleCreate = () => {
         if (!playerName || !quizId) return alert('Заполните имя и ID квиза');
         createLobby(playerName, quizId);
     };
 
-    // Форма входа
     const handleJoin = () => {
         if (!joinCode || !playerName) return alert('Заполните код лобби и имя');
         joinLobby(joinCode, playerName);
     };
 
-    // Отображение лобби
     if (lobby) {
         const isHost = lobby.players.find((p: any) => p.name === playerName)?.isHost;
 
