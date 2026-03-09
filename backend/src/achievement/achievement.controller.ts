@@ -21,26 +21,26 @@ export class AchievementController {
     }
 
     @Get()
-    @ApiOperation({summary: 'Получить все Вопросы'})
-    @ApiResponse({status: 200, description: 'Список Вопросов успешно получен'})
+    @ApiOperation({summary: 'Получить все достижения'})
+    @ApiResponse({status: 200, description: 'Список Достижений успешно получен'})
     @ApiBearerAuth()
     findAll() {
         return this.achievementService.achievementFindAll();
     }
 
     @Get(':id')
-    @ApiOperation({summary: 'Получить Вопрос по ID'})
-    @ApiResponse({status: 200, description: 'Вопрос успешно получен'})
-    @ApiResponse({status: 404, description: 'Вопрос не найден'})
-    @ApiParam({name: 'id', type: 'number', description: 'ID Вопроса'})
+    @ApiOperation({summary: 'Получить Достижение по ID'})
+    @ApiResponse({status: 200, description: 'Достижение успешно получен'})
+    @ApiResponse({status: 404, description: 'Достижение не найден'})
+    @ApiParam({name: 'id', type: 'number', description: 'ID Достижения'})
     getApplication(@Param('id', ParseIntPipe) id: number) {
         return this.achievementService.achievementGetById(id);
     }
 
     @Post()
     @UsePipes(new ValidationPipe())
-    @ApiOperation({summary: 'Создать новую Вопрос'})
-    @ApiResponse({status: 201, description: 'Вопрос успешно создан'})
+    @ApiOperation({summary: 'Создать новое Достижение'})
+    @ApiResponse({status: 201, description: 'Достижение успешно создано'})
     @ApiResponse({status: 400, description: 'Неверные данные'})
     @ApiBody({type: CreateAchievementDto})
     @ApiBearerAuth()
@@ -50,11 +50,11 @@ export class AchievementController {
 
     @Put(':id')
     @UsePipes(new ValidationPipe())
-    @ApiOperation({summary: 'Обновить Вопрос'})
-    @ApiResponse({status: 200, description: 'Вопрос успешно обновлен'})
+    @ApiOperation({summary: 'Обновить Достижение'})
+    @ApiResponse({status: 200, description: 'Достижение успешно обновлен'})
     @ApiResponse({status: 400, description: 'Неверные данные'})
-    @ApiResponse({status: 404, description: 'Вопрос не найден'})
-    @ApiParam({name: 'id', type: 'number', description: 'ID Вопроса'})
+    @ApiResponse({status: 404, description: 'Достижение не найден'})
+    @ApiParam({name: 'id', type: 'number', description: 'ID Достижение'})
     @ApiBearerAuth()
     update(
         @Param('id', ParseIntPipe) id: number,
@@ -65,10 +65,10 @@ export class AchievementController {
 
     @Delete(':id')
     @UsePipes(new ValidationPipe())
-    @ApiOperation({ summary: 'Удалить Вопрос' })
-    @ApiResponse({ status: 200, description: 'Вопрос успешно удален' })
-    @ApiResponse({ status: 404, description: 'Вопрос не найден' })
-    @ApiParam({ name: 'id', type: 'number', description: 'ID Вопроса' })
+    @ApiOperation({ summary: 'Удалить Достижение' })
+    @ApiResponse({ status: 200, description: 'Достижение успешно удален' })
+    @ApiResponse({ status: 404, description: 'Достижение не найден' })
+    @ApiParam({ name: 'id', type: 'number', description: 'ID Достижение' })
     @ApiBearerAuth()
     delete(@Param('id', ParseIntPipe) id: number) {
         return this.achievementService.achievementDelete(id);

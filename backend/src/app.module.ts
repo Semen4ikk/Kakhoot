@@ -6,6 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import {QuizModule} from "./quizs/quiz.module";
 import {QuestionModule} from "./questions/question.module";
 import {AchievementModule} from "./achievement/achievement.module";
+import {SessionModule} from "./session/session.module";
 
 
 
@@ -18,6 +19,7 @@ import {AchievementModule} from "./achievement/achievement.module";
         QuizModule,
         QuestionModule,
         AchievementModule,
+        SessionModule,
 
     ],
 })
