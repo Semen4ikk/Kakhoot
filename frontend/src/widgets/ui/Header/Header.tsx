@@ -13,7 +13,7 @@ export function Header() {
             <div>
                 <Link to="/lobby" >Играть с друзьями</Link>
                 <UserName/>
-                <button>Выйти</button>
+                <Link to="/login" >Выйти</Link>
             </div>
         </header>
     )

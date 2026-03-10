@@ -1,9 +1,9 @@
-import {Question} from "../entities/question/model/Question.tsx";
-import {useQuiz} from "../entities/quiz/hooks/useQuiz.tsx";
+import {Question} from "../../entities/question/model/Question.tsx";
+import {useQuiz} from "../../entities/quiz/hooks/useQuiz.tsx";
 import {useState} from "react";
-import {ResultWindow} from "../widgets/ui/ResultWindow.tsx";
+import {ResultWindow} from "../../widgets/ui/ResultWindow.tsx";
 import {useParams} from "react-router-dom";
-import {BackMainButton} from "../shared/ui/BackMainButton.tsx";
+import {BackMainButton} from "../../shared/ui/BackMainButton.tsx";
 
 export function QuizPage() {
     const { id } = useParams<{ id: string }>();
