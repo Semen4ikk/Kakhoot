@@ -1,9 +1,16 @@
 import styles from './Header.module.css'
 import {UserName} from "../../../shared/ui/UserName.tsx";
 import {Link} from "react-router-dom";
+import type {UserData} from "../../../entities/types/UserData.ts";
+
 
 
 export function Header() {
+    const user: UserData | null  = JSON.parse(sessionStorage.getItem('user')!)
+        ?? null;
+    const handleLogOut = ()=>{
+        sessionStorage.removeItem('user')
+    }
 
     return(
         <header className={styles.header}>
@@ -12,8 +19,8 @@ export function Header() {
             </div>
             <div>
                 <Link to="/lobby" >Играть с друзьями</Link>
-                <UserName/>
-                <Link to="/login" >Выйти</Link>
+                {user && <UserName user={user} />}
+                <Link to="/login" onClick={handleLogOut}>Выйти</Link>
             </div>
         </header>
     )

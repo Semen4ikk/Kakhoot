@@ -34,9 +34,7 @@ export function getQuizQuestion(id:string) {
 export const userLogin = async (data: IForm): Promise<{ id: number; name: string; email: string }> => {
     const response = await fetch("http://localhost:4200/users/login", {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
     });
 
@@ -45,5 +43,11 @@ export const userLogin = async (data: IForm): Promise<{ id: number; name: string
         throw new Error(errorData.message || "Неверный email или пароль");
     }
 
-    return response.json();
+    const responseData = await response.json();
+
+    if (!responseData.user) {
+        throw new Error("Некорректный формат ответа сервера");
+    }
+
+    return responseData.user;
 };

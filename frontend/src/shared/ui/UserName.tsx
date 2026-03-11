@@ -1,10 +1,17 @@
-import {useUserName} from "../../entities/user/hooks/useUserName.tsx";
+interface UserData {
+    name: string,
+    email: string,
+    password: string,
+}
+interface UserNameProps {
+    user: UserData;
+}
 
-export function UserName() {
+export function UserName({ user }: UserNameProps) {
 
     return(
         <div>
-            <span>{useUserName()}</span>
+            <span>{user.name}</span>
         </div>
     )
 }

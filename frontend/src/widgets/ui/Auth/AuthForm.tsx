@@ -7,6 +7,7 @@ import {useState} from "react";
 import {userLogin} from "../../../app/api.ts";
 
 
+
 export function AuthForm() {
     const navigate = useNavigate();
     const [serverError, setServerError] = useState<string | null>(null);
@@ -22,7 +23,8 @@ export function AuthForm() {
             setServerError(null);
             const user = await userLogin(data);
 
-            localStorage.setItem('user', JSON.stringify(user));
+            sessionStorage.setItem('user', JSON.stringify(user));
+
 
             navigate('/main');
         } catch (err) {
