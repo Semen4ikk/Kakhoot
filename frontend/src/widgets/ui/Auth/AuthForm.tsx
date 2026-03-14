@@ -2,7 +2,7 @@ import {type SubmitHandler, useForm} from "react-hook-form";
 import type {IForm} from "../../types/form.types.ts";
 import styles from "./AuthForm.module.css"
 import {ErrorMessage} from "../../../shared/ui/ErrorMessage.tsx";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useState} from "react";
 import {userLogin} from "../../../app/api.ts";
 
@@ -69,7 +69,11 @@ export function AuthForm() {
                     <ErrorMessage textError={serverError} />
                 </div>
             )}
-            <button className={styles.button} type="submit">Login</button>
+            <div className={styles.div}>
+                <Link to="/registration" className={styles.Linker}>Зарегистрироваться?</Link>
+                <button className={styles.button} type="submit">Login</button>
+            </div>
+
         </form>
     )
 }

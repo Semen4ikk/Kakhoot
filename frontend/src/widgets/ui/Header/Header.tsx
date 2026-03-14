@@ -11,6 +11,10 @@ export function Header() {
     const handleLogOut = ()=>{
         sessionStorage.removeItem('user')
     }
+    let exit: string = 'Выйти'
+    if (user === null) {
+        exit = 'Войти'
+    }
 
     return(
         <header className={styles.header}>
@@ -20,7 +24,7 @@ export function Header() {
             <div>
                 <Link to="/lobby" >Играть с друзьями</Link>
                 {user && <UserName user={user} />}
-                <Link to="/login" onClick={handleLogOut}>Выйти</Link>
+                <Link to="/login" onClick={handleLogOut}>{exit}</Link>
             </div>
         </header>
     )
