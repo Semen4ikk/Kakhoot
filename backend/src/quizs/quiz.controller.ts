@@ -44,6 +44,14 @@ export class QuizController {
     getApplication(@Param('id', ParseIntPipe) id: number) {
         return this.quizsService.quizGetById(id);
     }
+    @Get(':id/questions')
+    @ApiOperation({ summary: 'Получить вопрос по id' })
+    @ApiResponse({ status: 200, description: 'Вопросы успешно получены' })
+    @ApiResponse({ status: 404, description: 'Квиз не найден' })
+    @ApiParam({ name: 'id', type: 'number', description: 'ID Квиза' })
+    getQuestions(@Param('id', ParseIntPipe) id: number) {
+        return this.quizsService.getQuestions(id);
+    }
 
     @Post()
     @UsePipes(new ValidationPipe())

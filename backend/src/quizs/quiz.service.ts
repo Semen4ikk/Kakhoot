@@ -54,4 +54,20 @@ export class QuizService {
             where: { id },
         });
     }
+    async getQuestions(quizId: number) {
+        const questions = await this.prisma.question.findMany({
+            where: { quizId },
+            orderBy: {
+                id: 'asc',
+            },
+        });
+
+        return questions.map((q) => ({
+            id: q.id,
+            question: q.ques,
+            correct_answer: q.correct_answer,
+            incorrect_answers: q.incorrect_answers,
+            quizId: q.quizId,
+        }));
+    }
 }
