@@ -1,87 +1,92 @@
 import { useState } from 'react';
-import { useSessionSocket } from '../../../entities/session/hooks/useSessionSocket.tsx';
+
+import {MultiplayerQuiz} from "../MultiplayerQuiz/MultiplayerQuiz.tsx";
+import {useSessionSocket} from "../../../entities/session/SessionContext.tsx";
 
 export const LobbyManager = () => {
-    const { lobby, createLobby, joinLobby, startGame, isConnected } = useSessionSocket();
-
-    const [playerName, setPlayerName] = useState('');
+    const { lobby, gameState, createLobby, joinLobby, startGame, isConnected, leaveLobby, playerName, setPlayerName } = useSessionSocket();
     const [quizId, setQuizId] = useState('');
     const [joinCode, setJoinCode] = useState('');
 
-    const handleCreate = () => {
-        if (!playerName || !quizId) return alert('Заполните имя и ID квиза');
-        createLobby(playerName, quizId);
-    };
-
-    const handleJoin = () => {
-        if (!joinCode || !playerName) return alert('Заполните код лобби и имя');
-        joinLobby(joinCode, playerName);
-    };
+    if (gameState?.isActive) {
+        return <MultiplayerQuiz />;
+    }
 
     if (lobby) {
         const isHost = lobby.players.find((p: any) => p.name === playerName)?.isHost;
+        const lobbyCode = lobby.code || lobby.id || lobby.lobbyCode || '—';
 
         return (
-            <div>
-                <h2>Лобби: {lobby.id}</h2>
-                <p>Квиз ID: {lobby.quizId}</p>
-                <p>Статус: <strong>{lobby.status}</strong></p>
+            <div className="lobby-container">
+                <button onClick={leaveLobby} className="lobby-leave-btn">← Выйти из лобби</button>
 
-                <h3>Игроки ({lobby.players.length}):</h3>
-                <ul>
+                <div className="lobby-info-card">
+                    <h2 className="lobby-title">
+                        Лобби: <span className="lobby-code">{lobbyCode}</span>
+                    </h2>
+                    <p className="lobby-quiz-id">Квиз ID: {lobby.quizId}</p>
+                    <p className="lobby-status">Статус: <strong>{lobby.status}</strong></p>
+                </div>
+
+                <h3 className="players-title">Игроки ({lobby.players.length}):</h3>
+                <ul className="players-list">
                     {lobby.players.map((p: any, i: number) => (
-                        <li key={i}>
-                            {p.name} {p.isHost && '(Хост)'}
+                        <li key={i} className="player-item">
+                            {p.name} {p.isHost && <span className="player-badge">Организатор</span>} {p.name === playerName && <span className="player-badge player-badge--me">Вы</span>}
                         </li>
                     ))}
                 </ul>
 
                 {lobby.status === 'waiting' && isHost && (
-                    <button onClick={() => startGame(lobby.id)}>
-                        Начать игру
+                    <button
+                        onClick={() => startGame(lobby.id)}
+                        className="lobby-start-btn"
+                    >
+                        Начать игру для всех
                     </button>
                 )}
 
-                {lobby.status === 'playing' && (
-                    <div className="game-active">
-                        Игра идёт! Ожидайте вопрос...
-                    </div>
+                {lobby.status === 'waiting' && !isHost && (
+                    <p className="lobby-waiting-text">Ожидайте, пока организатор начнет игру...</p>
                 )}
             </div>
         );
     }
 
     return (
-        <div>
-            <h1>Квиз Сессии</h1>
+        <div className="lobby-entry">
+            <h1 className="lobby-entry-title">Мультиплеер Квиз</h1>
 
             <input
                 placeholder="Ваше имя"
                 value={playerName}
                 onChange={(e) => setPlayerName(e.target.value)}
+                className="lobby-input"
             />
-            <div style={{ border: '1px solid #ccc', padding: 16, margin: 10 }}>
-                <h3>Создать лобби</h3>
+
+            <div className="lobby-section">
+                <h3 className="lobby-section-title">Создать лобби</h3>
                 <input
                     placeholder="ID Квиза"
-                    type="number"
                     value={quizId}
                     onChange={(e) => setQuizId(e.target.value)}
+                    className="lobby-input"
                 />
-                <button onClick={handleCreate} disabled={!isConnected}>
+                <button onClick={() => createLobby(playerName, quizId)} disabled={!isConnected} className="lobby-btn">
                     Создать
                 </button>
             </div>
-            <div style={{ border: '1px solid #ccc', padding: 16, margin: 10 }}>
-                <h3>Войти в лобби</h3>
+
+            <div className="lobby-section">
+                <h3 className="lobby-section-title">Войти в лобби</h3>
                 <input
                     placeholder="Код лобби"
                     value={joinCode}
                     onChange={(e) => setJoinCode(e.target.value.toUpperCase())}
                     maxLength={6}
-                    style={{ textTransform: 'uppercase' }}
+                    className="lobby-input lobby-input--code"
                 />
-                <button onClick={handleJoin} disabled={!isConnected}>
+                <button onClick={() => joinLobby(joinCode, playerName)} disabled={!isConnected} className="lobby-btn">
                     Войти
                 </button>
             </div>
