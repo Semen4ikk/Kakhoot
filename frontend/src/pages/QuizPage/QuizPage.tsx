@@ -1,11 +1,11 @@
 import {Question} from "../../entities/question/model/Question.tsx";
 import {useQuiz} from "../../entities/quiz/hooks/useQuiz.tsx";
 import {useState} from "react";
-import {ResultWindow} from "../../widgets/ui/ResultWindow.tsx";
-import {useParams} from "react-router-dom";
+import {ResultWindow} from "../../widgets/ui/ResultWindow/ResultWindow.tsx";
 import {BackMainButton} from "../../shared/ui/BackMainButton.tsx";
+import {useParams} from "react-router-dom";
 
-export function QuizPage() {
+export function QuizPage(){
     const { id } = useParams<{ id: string }>();
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);

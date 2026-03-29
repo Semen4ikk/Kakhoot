@@ -2,12 +2,13 @@ import { Heading } from "../../../shared/ui/Heading.tsx";
 import type { IQuizQuestion } from "../../../widgets/types/Quiz.ts";
 import {useMemo} from "react";
 
-interface QuestionProps {
+export interface QuestionProps {
     question: IQuizQuestion;
     onAnswerSelect: (answer: string) => void;
     selectedAnswer: string | null;
     correctAnswer: string;
     disabled?: boolean;
+
 }
 
 export function Question({
