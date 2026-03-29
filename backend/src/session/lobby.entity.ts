@@ -14,11 +14,14 @@ export enum LobbyStatus {
 
 export interface Lobby {
     id: string;
+    code: string;
     quizId: string;
+    quizName?: string;
     hostId: string;
     players: Player[];
     status: LobbyStatus;
+    questions: any[];
     currentQuestionIndex: number;
-    answers: Record<string, number>;
+    answers: Record<string, string>;
     createdAt: number;
 }
