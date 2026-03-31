@@ -1,0 +1,257 @@
+
+
+.lobbyContainer {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    max-width: 500px;
+    width: 100%;
+    background: #000000;
+    border-radius: 24px;
+    padding: 50px 40px;
+    max-height: 90vh;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
+}
+
+.Title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 40px 0;
+    padding: 0;
+    line-height: 1.1;
+    text-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.input {
+    flex: 1;
+    min-width: 0;
+    max-width: 350px;
+    padding: 14px 18px;
+    font-size: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: #000000;
+    color: #fff;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.input:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.button {
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 12px;
+    border: 1px solid #fff;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    margin-left: 10px;
+    width: 110px;
+}
+
+.button:hover:not(:disabled) {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.inputGroup {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.inputGroup:last-of-type {
+    margin-bottom: 0;
+}
+
+.Subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 25px 0 15px 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* --- Стили для экрана лобби --- */
+
+.lobbyLeaveBtn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.lobbyLeaveBtn:hover {
+    border-color: #fff;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.lobbyInfoCard {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.lobbyTitle {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.lobbyCode {
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.lobbyQuizId,
+.lobbyStatus {
+    margin: 8px 0;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.playersTitle {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin: 0 0 15px 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Таблица игроков */
+.playersTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tableHeader {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tableHeader:first-child {
+    width: 50px;
+    text-align: center;
+}
+
+.tableRow {
+    transition: background 0.2s ease;
+}
+
+.tableRow:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tableCell {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.tableRow:last-child .tableCell {
+    border-bottom: none;
+}
+
+.tableCell:first-child {
+    text-align: center;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.playerBadge {
+    background: rgba(255, 215, 0, 0.2);
+    color: #ffd700;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 8px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.playerBadgeMe {
+    background: rgba(255, 255, 255, 0.4);
+    color: #000;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.playerRole {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.lobbyStartBtn {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 12px;
+    border: 1px solid #fff;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.lobbyStartBtn:hover {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+}
+
+.lobbyWaitingText {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}

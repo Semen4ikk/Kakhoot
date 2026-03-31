@@ -1,10 +1,10 @@
 import { useSessionSocket } from "../../../entities/session/SessionContext.tsx";
 
 import styles from './ResultWindow.module.css';
-import {BackMainButton} from "../../../shared/ui/BackMainButton.tsx";
+import {BackMainButton} from "../../../shared/ui/BackMainButton/BackMainButton.tsx";
 
 export const ResultWindow = () => {
-    const { gameState, playerName } = useSessionSocket();
+    const { gameState, playerName, leaveLobby } = useSessionSocket();
 
     const sortedLeaderboard = [...(gameState?.leaderboard || [])].sort(
         (a, b) => b.score - a.score
@@ -81,7 +81,7 @@ export const ResultWindow = () => {
                     </div>
                 )}
 
-                <BackMainButton/>
+                <BackMainButton Leave={leaveLobby}/>
             </div>
         </div>
     );

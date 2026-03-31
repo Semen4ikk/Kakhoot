@@ -1,0 +1,8 @@
+.lobbyPage {
+    height: calc(100vh - 80px);
+    background: #000000;
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

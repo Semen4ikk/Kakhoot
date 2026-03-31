@@ -1,9 +1,9 @@
 import {Question} from "../../entities/question/model/Question.tsx";
 import {useQuiz} from "../../entities/quiz/hooks/useQuiz.tsx";
 import {useState} from "react";
-import {ResultWindow} from "../../widgets/ui/ResultWindow/ResultWindow.tsx";
-import {BackMainButton} from "../../shared/ui/BackMainButton.tsx";
+import {BackMainButton} from "../../shared/ui/BackMainButton/BackMainButton.tsx";
 import {useParams} from "react-router-dom";
+import {ResultWindowSolo} from "../../widgets/ui/ResultWindowSolo/ResultWindowSolo.tsx";
 
 export function QuizPage(){
     const { id } = useParams<{ id: string }>();
@@ -63,7 +63,7 @@ export function QuizPage(){
     if (showResult) {
         return (
             <div>
-                <ResultWindow
+                <ResultWindowSolo
                     score={score}
                     lenQuestions={quiz.questions.length}
                 />

@@ -1,11 +1,11 @@
 import { useState, useMemo } from "react";
 import type { IQuizQuestion } from "../../types/Quiz.ts";
-import { ResultWindow } from "../ResultWindow/ResultWindow.tsx";
+import { ResultWindow } from "../ResultWindowMulti/ResultWindow.tsx";
 import { Question } from "../../../entities/question/model/Question.tsx";
 import { useSessionSocket } from "../../../entities/session/SessionContext.tsx";
 
 export const MultiplayerQuiz = () => {
-    const { gameState, sendAnswer, lobby, playerName } = useSessionSocket();
+    const { gameState, sendAnswer, lobby, playerName, leaveLobby } = useSessionSocket();
     const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
 
     const currentQuestion: IQuizQuestion | null = useMemo(() => {

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-
-import {MultiplayerQuiz} from "../MultiplayerQuiz/MultiplayerQuiz.tsx";
-import {useSessionSocket} from "../../../entities/session/SessionContext.tsx";
+import { MultiplayerQuiz } from "../MultiplayerQuiz/MultiplayerQuiz.tsx";
+import { useSessionSocket } from "../../../entities/session/SessionContext.tsx";
+import styles from "./LobbyManager.module.css";
 
 export const LobbyManager = () => {
     const { lobby, gameState, createLobby, joinLobby, startGame, isConnected, leaveLobby, playerName, setPlayerName } = useSessionSocket();
@@ -17,76 +17,109 @@ export const LobbyManager = () => {
         const lobbyCode = lobby.code || lobby.id || lobby.lobbyCode || '—';
 
         return (
-            <div className="lobby-container">
-                <button onClick={leaveLobby} className="lobby-leave-btn">← Выйти из лобби</button>
 
-                <div className="lobby-info-card">
-                    <h2 className="lobby-title">
-                        Лобби: <span className="lobby-code">{lobbyCode}</span>
+            <div className={styles.lobbyContainer}>
+                <button onClick={leaveLobby} className={styles.lobbyLeaveBtn}>
+                    ← Выйти из лобби
+                </button>
+
+                <div className={styles.lobbyInfoCard}>
+                    <h2 className={styles.lobbyTitle}>
+                        Лобби: <span className={styles.lobbyCode}>{lobbyCode}</span>
                     </h2>
-                    <p className="lobby-quiz-id">Квиз ID: {lobby.quizId}</p>
-                    <p className="lobby-status">Статус: <strong>{lobby.status}</strong></p>
+                    <p className={styles.lobbyQuizId}>Квиз ID: {lobby.quizId}</p>
+                    <p className={styles.lobbyStatus}>Статус: <strong>{lobby.status}</strong></p>
                 </div>
 
-                <h3 className="players-title">Игроки ({lobby.players.length}):</h3>
-                <ul className="players-list">
+                <h3 className={styles.playersTitle}>Игроки ({lobby.players.length}):</h3>
+
+                <table className={styles.playersTable}>
+                    <thead>
+                    <tr>
+                        <th className={styles.tableHeader}>#</th>
+                        <th className={styles.tableHeader}>Игрок</th>
+                        <th className={styles.tableHeader}>Роль</th>
+                    </tr>
+                    </thead>
+                    <tbody>
                     {lobby.players.map((p: any, i: number) => (
-                        <li key={i} className="player-item">
-                            {p.name} {p.isHost && <span className="player-badge">Организатор</span>} {p.name === playerName && <span className="player-badge player-badge--me">Вы</span>}
-                        </li>
+                        <tr key={i} className={styles.tableRow}>
+                            <td className={styles.tableCell}>{i + 1}</td>
+                            <td className={styles.tableCell}>
+                                {p.name}
+                                {p.name === playerName && <span className={styles.playerBadgeMe}>Вы</span>}
+                            </td>
+                            <td className={styles.tableCell}>
+                                {p.isHost ? (
+                                    <span className={styles.playerBadge}>Организатор</span>
+                                ) : (
+                                    <span className={styles.playerRole}>Игрок</span>
+                                )}
+                            </td>
+                        </tr>
                     ))}
-                </ul>
+                    </tbody>
+                </table>
 
                 {lobby.status === 'waiting' && isHost && (
                     <button
                         onClick={() => startGame(lobby.id)}
-                        className="lobby-start-btn"
+                        className={styles.lobbyStartBtn}
                     >
                         Начать игру для всех
                     </button>
                 )}
 
                 {lobby.status === 'waiting' && !isHost && (
-                    <p className="lobby-waiting-text">Ожидайте, пока организатор начнет игру...</p>
+                    <p className={styles.lobbyWaitingText}>Ожидайте, пока организатор начнет игру...</p>
                 )}
             </div>
         );
     }
 
     return (
-        <div className="lobby-entry">
-            <h1 className="lobby-entry-title">Мультиплеер Квиз</h1>
+
+        <div className={styles.lobbyContainer}>
+            <h1 className={styles.Title}>Мультиплеер Квиз</h1>
 
             <input
                 placeholder="Ваше имя"
                 value={playerName}
                 onChange={(e) => setPlayerName(e.target.value)}
-                className="lobby-input"
+                className={styles.input}
             />
 
-            <div className="lobby-section">
-                <h3 className="lobby-section-title">Создать лобби</h3>
+            <h3 className={styles.Subtitle}>Создать лобби</h3>
+            <div className={styles.inputGroup}>
                 <input
                     placeholder="ID Квиза"
                     value={quizId}
                     onChange={(e) => setQuizId(e.target.value)}
-                    className="lobby-input"
+                    className={styles.input}
                 />
-                <button onClick={() => createLobby(playerName, quizId)} disabled={!isConnected} className="lobby-btn">
+                <button
+                    onClick={() => createLobby(playerName, quizId)}
+                    disabled={!isConnected}
+                    className={styles.button}
+                >
                     Создать
                 </button>
             </div>
 
-            <div className="lobby-section">
-                <h3 className="lobby-section-title">Войти в лобби</h3>
+            <h3 className={styles.Subtitle}>Войти в лобби</h3>
+            <div className={styles.inputGroup}>
                 <input
                     placeholder="Код лобби"
                     value={joinCode}
                     onChange={(e) => setJoinCode(e.target.value.toUpperCase())}
                     maxLength={6}
-                    className="lobby-input lobby-input--code"
+                    className={styles.input}
                 />
-                <button onClick={() => joinLobby(joinCode, playerName)} disabled={!isConnected} className="lobby-btn">
+                <button
+                    onClick={() => joinLobby(joinCode, playerName)}
+                    disabled={!isConnected}
+                    className={styles.button}
+                >
                     Войти
                 </button>
             </div>

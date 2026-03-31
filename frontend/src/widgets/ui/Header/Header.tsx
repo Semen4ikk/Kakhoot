@@ -19,7 +19,7 @@ export function Header() {
     return(
         <header className={styles.header}>
             <div>
-                <p>Joiny</p>
+                <Link to="/main" >Joiny</Link>
             </div>
             <div>
                 <Link to="/lobby" >Играть с друзьями</Link>
