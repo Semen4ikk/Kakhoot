@@ -9,13 +9,14 @@
 
 .finalContainer {
     border: #fff9fb 1px solid;
-    max-width: 600px;
-    width: 100%;
+    max-width: 580px;
+    width: 60vw;
     background: #000000;
     backdrop-filter: blur(10px);
     border-radius: 24px;
-    padding: 40px;
+    padding: 50px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    margin-top: 484px;
 }
 
 .finalHeader {
@@ -40,6 +41,7 @@
     background: linear-gradient(135deg, #000000 5%, rgba(69, 69, 69, 0.9) 90%);
     /*background: linear-gradient(135deg, #000000 0%, #ffffff 50%, #000000 100%);*/
     border-radius: 16px;
+    max-height: 210px;
     padding: 30px;
     text-align: center;
     margin-bottom: 40px;
@@ -60,7 +62,7 @@
 
 .winnerCrown {
     font-size: 4rem;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
 }
 
 .winnerLabel {

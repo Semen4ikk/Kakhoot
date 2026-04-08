@@ -1,13 +1,16 @@
-import {NestFactory} from '@nestjs/core';
-import {AppModule} from './app.module';
-import {DocumentBuilder, SwaggerModule} from '@nestjs/swagger';
-
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
-    app.enableCors();
 
-
+    app.enableCors({
+        origin: '*',
+        credentials: true,
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+        allowedHeaders: ['Content-Type', 'Authorization'],
+    });
 
     const config = new DocumentBuilder()
         .setTitle('API Documentation Joiny')
@@ -18,6 +21,29 @@ async function bootstrap() {
     const document = SwaggerModule.createDocument(app, config);
     SwaggerModule.setup('api/docs', app, document);
 
-    await app.listen(process.env.PORT ?? 4200);
+    const PORT = process.env.PORT ?? 4200;
+
+    await app.listen(PORT, '0.0.0.0');
+
+    console.log(`🚀 Backend running on:`);
+    console.log(`   Local:   http://localhost:${PORT}`);
+    console.log(`   Network: http://${getLocalIP()}:${PORT}`);
+    console.log(`   Swagger: http://${getLocalIP()}:${PORT}/api/docs`);
 }
+
+function getLocalIP() {
+    const os = require('os');
+    const interfaces = os.networkInterfaces();
+    for (const devName in interfaces) {
+        const iface = interfaces[devName];
+        for (let i = 0; i < iface.length; i++) {
+            const alias = iface[i];
+            if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
+                return alias.address;
+            }
+        }
+    }
+    return 'localhost';
+}
+
 bootstrap();

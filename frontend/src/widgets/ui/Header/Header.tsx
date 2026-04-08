@@ -22,6 +22,7 @@ export function Header() {
                 <Link to="/main" >Joiny</Link>
             </div>
             <div>
+                <Link to="/createQuiz">Создать квиз</Link>
                 <Link to="/lobby" >Играть с друзьями</Link>
                 {user && <UserName user={user} />}
                 <Link to="/login" onClick={handleLogOut}>{exit}</Link>
