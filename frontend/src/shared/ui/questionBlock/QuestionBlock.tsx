@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import styles from "./QuestionBlock.module.css";
 
 export interface QuestionBlockProps {
     id: string;
@@ -33,19 +34,16 @@ export function QuestionBlock({ id, onDelete, onChange }: QuestionBlockProps) {
     };
 
     return (
-        <div className="question-block">
-
-
-
+        <div className={styles.questionBlock}>
             <input
-                className="question-input"
+                className={styles.input}
                 placeholder="Введите текст вопроса"
                 value={question}
                 onChange={(e) => setQuestion(e.target.value)}
             />
 
             <input
-                className="correct-input"
+                className={styles.input}
                 placeholder="Введите правильный ответ"
                 value={correctAnswer}
                 onChange={(e) => setCorrectAnswer(e.target.value)}
@@ -54,7 +52,7 @@ export function QuestionBlock({ id, onDelete, onChange }: QuestionBlockProps) {
             {wrongAnswers.map((answer, index) => (
                 <input
                     key={index}
-                    className="wrong-input"
+                    className={styles.input}
                     placeholder="Введите неправильный ответ"
                     value={answer}
                     onChange={(e) => updateWrongAnswer(index, e.target.value)}
@@ -62,7 +60,7 @@ export function QuestionBlock({ id, onDelete, onChange }: QuestionBlockProps) {
             ))}
             <button
             type="button"
-            className="delete-btn"
+            className={styles.deleteButton}
             onClick={handleDelete}
             disabled={isDeleting}
             >

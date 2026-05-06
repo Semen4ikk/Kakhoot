@@ -161,5 +161,12 @@ button:hover {
     margin-bottom: 12px;
   }
 }
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: inherit;
+    text-decoration: none;
+}
 
 

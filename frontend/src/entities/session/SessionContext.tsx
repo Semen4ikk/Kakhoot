@@ -110,10 +110,8 @@ export const SessionProvider = ({ children }: { children: ReactNode }) => {
         });
 
         newSocket.on('game_answer_result', (data) => {
-            console.log('📊 game_answer_result received:', data);
             setGameState((prev) => {
                 if (!prev) {
-                    console.warn('⚠️ gameState is null when receiving game_answer_result');
                     return null;
                 }
                 const newState = {

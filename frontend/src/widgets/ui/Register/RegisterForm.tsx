@@ -8,8 +8,6 @@ import styles from './RegistrationForm.module.css'
 
 export function RegisterForm() {
     const navigate = useNavigate();
-
-    // ✅ ДОБАВЛЕНО: состояние для отображения ошибок от сервера
     const [serverError, setServerError] = useState<string | null>(null);
 
     const { register, handleSubmit, formState } = useForm<IForm>({
