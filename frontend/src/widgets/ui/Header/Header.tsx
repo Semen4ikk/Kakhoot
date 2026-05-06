@@ -2,6 +2,7 @@ import styles from './Header.module.css'
 import {UserName} from "../../../shared/ui/UserName.tsx";
 import {Link} from "react-router-dom";
 import type {UserData} from "../../../entities/types/UserData.ts";
+import {authUserCheck} from "../../../features/authUserCheck/authUserCheck.ts";
 
 
 
@@ -22,7 +23,12 @@ export function Header() {
                 <Link to="/main" >Joiny</Link>
             </div>
             <div>
-                <Link to="/createQuiz">Создать квиз</Link>
+                <Link to="/createQuiz" onClick={(e)=>{if(!authUserCheck())
+                {e.preventDefault();
+                    alert('Квиз может создать только авторизованный пользователь!!!');}
+                }}>
+                    Создать квиз
+                </Link>
                 <Link to="/lobby" >Играть с друзьями</Link>
                 {user && <UserName user={user} />}
                 <Link to="/login" onClick={handleLogOut}>{exit}</Link>
