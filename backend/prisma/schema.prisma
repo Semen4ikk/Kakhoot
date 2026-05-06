@@ -1,10 +1,10 @@
-generator client {
-  provider   = "prisma-client-js"
-  engineType = "client"
-}
-
 datasource db {
   provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client"
+  output   = "./generated"
 }
 
 model User {
@@ -16,6 +16,7 @@ model User {
   created_at       DateTime          @default(now())
   updated_at       DateTime          @default(now()) @updatedAt
   userAchievements UserAchievement[]
+  Quiz             Quiz[]
 }
 
 model Question {
@@ -36,6 +37,9 @@ model Quiz {
   name      String
   category  String
   questions Question[]
+
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
 
   created_at DateTime @default(now())
   updated_at DateTime @default(now()) @updatedAt

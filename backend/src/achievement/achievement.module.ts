@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import {PrismaService} from "../prisma.service";
+
 import {ConfigService} from "@nestjs/config";
-import {AchievementService} from "./achievement.service";
-import {AchievementController} from "./achievement.controller";
+import {AchievementService} from "./achievement.service.js";
+import {AchievementController} from "./achievement.controller.js";
+import {PrismaService} from "../prisma.service.js";
 
 @Module({
     controllers: [AchievementController],

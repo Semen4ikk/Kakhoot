@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
-import { Lobby, LobbyStatus, Player } from './lobby.entity';
-import { CreateLobbyDto, JoinLobbyDto } from './session.dto';
-import { QuizService } from '../quizs/quiz.service';
+import { Lobby, LobbyStatus, Player } from './lobby.entity.js';
+import { CreateLobbyDto, JoinLobbyDto } from './session.dto.js';
+import { QuizService } from '../quizs/quiz.service.js';
 
 @Injectable()
 export class SessionService {

@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { AppModule } from './app.module.js';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import * as os from 'os';
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
@@ -31,11 +32,13 @@ async function bootstrap() {
     console.log(`   Swagger: http://${getLocalIP()}:${PORT}/api/docs`);
 }
 
-function getLocalIP() {
-    const os = require('os');
+function getLocalIP(): string {
     const interfaces = os.networkInterfaces();
+
     for (const devName in interfaces) {
         const iface = interfaces[devName];
+        if (!iface) continue;
+
         for (let i = 0; i < iface.length; i++) {
             const alias = iface[i];
             if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {

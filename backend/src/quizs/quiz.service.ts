@@ -1,6 +1,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { PrismaService } from '../prisma.service';
-import { CreateQuizDto, TUpdateQuizDto } from './quiz.dto';
+
+import { CreateQuizDto, TUpdateQuizDto } from './quiz.dto.js';
+import {PrismaService} from "../prisma.service.js";
+
+
+
 
 @Injectable()
 export class QuizService {
@@ -32,18 +36,49 @@ export class QuizService {
         return quiz;
     }
 
-    quizCreate(dto: CreateQuizDto) {
+    async quizCreate(dto: CreateQuizDto) {
+        const { questions, ...quizData } = dto;
+
         return this.prisma.quiz.create({
-            data: dto,
+            data: {
+                ...quizData,
+                questions: {
+                    create: questions.map(q => ({
+                        ques: q.ques,
+                        correct_answer: q.correct_answer,
+                        incorrect_answers: q.incorrect_answers,
+                    })),
+                },
+            },
+            include: {
+                questions: true,
+            },
         });
     }
 
     async quizUpdate(id: number, dto: TUpdateQuizDto) {
+        // 1. Проверяем, что квиз существует
         await this.quizGetById(id);
+
+        // 2. Отделяем вопросы от полей самого квиза
+        const { questions, ...quizData } = dto;
 
         return this.prisma.quiz.update({
             where: { id },
-            data: dto,
+            data: {
+                ...quizData,
+                ...(questions && {
+                    questions: {
+                        deleteMany: {},
+                        create: questions.map(q => ({
+                            ques: q.ques,
+                            correct_answer: q.correct_answer,
+                            incorrect_answers: q.incorrect_answers,
+                        })),
+                    },
+                }),
+            },
+            include: { questions: true },
         });
     }
 

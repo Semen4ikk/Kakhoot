@@ -10,9 +10,9 @@ import {
     ValidationPipe,
 } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiBearerAuth, ApiBody, ApiParam } from '@nestjs/swagger';
-import { ParseIntPipe } from '../conception/pipe';
-import {AchievementService} from "./achievement.service";
-import {CreateAchievementDto} from "./achievement.dto";
+import { ParseIntPipe } from '../conception/pipe.js';
+import {AchievementService} from "./achievement.service.js";
+import {CreateAchievementDto} from "./achievement.dto.js";
 
 @ApiTags('achievement')
 @Controller('achievement')

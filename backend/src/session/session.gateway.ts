@@ -7,8 +7,8 @@ import {
     OnGatewayDisconnect,
 } from '@nestjs/websockets';
 import { Server, Socket } from 'socket.io';
-import { SessionService } from './session.service';
-import { CreateLobbyDto, JoinLobbyDto, StartGameDto } from './session.dto';
+import { SessionService } from './session.service.js';
+import { CreateLobbyDto, JoinLobbyDto, StartGameDto } from './session.dto.js';
 import { UsePipes, ValidationPipe, Logger } from '@nestjs/common';
 
 @WebSocketGateway({

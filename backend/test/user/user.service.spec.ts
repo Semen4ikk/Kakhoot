@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { UsersService } from '../src/users/user.service';
-import { PrismaService } from '../src/prisma.service';
+import { UsersService } from '../../src/users/user.service';
+import { PrismaService } from '../../src/prisma.service';
 import { JwtService } from '@nestjs/jwt';
 import {Role} from "@prisma/client";
 

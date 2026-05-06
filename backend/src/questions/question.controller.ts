@@ -10,9 +10,9 @@ import {
     ValidationPipe,
 } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiBearerAuth, ApiBody, ApiParam } from '@nestjs/swagger';
-import { QuestionService } from './question.service';
-import { ParseIntPipe } from '../conception/pipe';
-import * as questionDto from './question.dto';
+import { QuestionService } from './question.service.js';
+import { ParseIntPipe } from '../conception/pipe.js';
+import * as questionDto from './question.dto.js';
 
 @ApiTags('question')
 @Controller('question')

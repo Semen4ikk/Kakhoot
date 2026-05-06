@@ -1,9 +1,10 @@
 import {BadRequestException, Injectable, UnauthorizedException} from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
-import { PrismaService } from '../prisma.service';
-import { CreateUsersDto, TUpdateUsersDto } from './user.dto';
+
 import {PrismaClientKnownRequestError} from "@prisma/client/runtime/client";
+import {PrismaService} from "../prisma.service.js";
+import {CreateUsersDto, TUpdateUsersDto} from "./user.dto.js";
 
 @Injectable()
 export class UsersService {

@@ -11,9 +11,9 @@ import {
     ValidationPipe,
 } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiBearerAuth, ApiBody, ApiParam } from '@nestjs/swagger';
-import { QuizService } from './quiz.service';
-import { ParseIntPipe } from '../conception/pipe';
-import * as quizDto from './quiz.dto';
+import { QuizService } from './quiz.service.js';
+import { ParseIntPipe } from '../conception/pipe.js';
+import * as quizDto from './quiz.dto.js';
 
 
 @ApiTags('quiz')

@@ -11,10 +11,10 @@ import {
     ValidationPipe,
 } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiBearerAuth, ApiBody, ApiParam } from '@nestjs/swagger';
-import { UsersService } from './user.service';
-import { ParseIntPipe } from '../conception/pipe';
-import * as userDto from './user.dto';
-import {LoginDto} from "./login.dto";
+import { UsersService } from './user.service.js';
+import { ParseIntPipe } from '../conception/pipe.js';
+import * as userDto from './user.dto.js';
+import {LoginDto} from "./login.dto.js";
 
 
 @ApiTags('Users')

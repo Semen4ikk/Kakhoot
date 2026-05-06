@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { PrismaService } from '../prisma.service';
-import {CreateAchievementDto, TUpdateAchievementDto} from "./achievement.dto";
+import { PrismaService } from '../prisma.service.js';
+import {CreateAchievementDto, TUpdateAchievementDto} from "./achievement.dto.js";
 
 
 
